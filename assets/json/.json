@@ -1,0 +1,1501 @@
+{
+	"info": {
+		"_postman_id": "2ab8069b-660a-4c75-83b3-77ba62e37deb",
+		"name": "Venus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25080608",
+		"_collection_link": "https://interstellar-eclipse-553685.postman.co/workspace/Team-Workspace~9a49d208-1f42-4685-8387-f9dffc869778/collection/25080608-2ab8069b-660a-4c75-83b3-77ba62e37deb?action=share&creator=25080608&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Driver",
+			"item": [
+				{
+					"name": "getProfileDriver",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "driver",
+								"value": "9",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/driver/profile",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"driver",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "user",
+								"value": "40",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userName",
+									"value": "hassanss",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/icon/Downloads/download.jpg",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "hassan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{techno_url}}/driver/update",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"driver",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "driver",
+								"value": "7",
+								"type": "text"
+							},
+							{
+								"key": "status",
+								"value": "1",
+								"description": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{techno_url}}/driver/edit/status",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"driver",
+								"edit",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "ahmed@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{techno_url}}/driver/login",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"driver",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "getProfileClient",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "34",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{live}}/client/profile",
+							"host": [
+								"{{live}}"
+							],
+							"path": [
+								"client",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "user",
+								"value": "53",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/icon/Downloads/Image_created_with_a_mobile_phone.png"
+								},
+								{
+									"key": "userName",
+									"value": "tests",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01236880",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{live}}/client/update",
+							"host": [
+								"{{live}}"
+							],
+							"path": [
+								"client",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "01234567899",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{live}}/client/login",
+							"host": [
+								"{{live}}"
+							],
+							"path": [
+								"client",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "cliwnt@app.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "mahmoud",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01234567899",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "mahmoud",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/client/register",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"client",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "42",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{techno_url}}/client/delete",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"client",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Setting",
+			"item": [
+				{
+					"name": "getSettings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{techno_url}}/settings",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get FAQS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{techno_url}}/settings/faqs",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"settings",
+								"faqs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Static Page",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "page",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{techno_url}}/settings/static/pages",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"settings",
+								"static",
+								"pages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact Us",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "page",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{techno_url}}/settings/contact/pages",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"settings",
+								"contact",
+								"pages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "userId",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "userType",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "subject",
+								"value": "contact",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{techno_url}}/settings/send/message",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"settings",
+								"send",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complaints",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "ride",
+								"value": "153",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "details",
+									"value": "sssssssssss",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{techno_url}}/settings/send/complaints",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"settings",
+								"send",
+								"complaints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Support",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "driver",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{techno_url}}/customer/support",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"customer",
+								"support"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OTP",
+			"item": [
+				{
+					"name": "send OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "driver",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "01060336156",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{techno_url}}/reset/checkOtp",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"reset",
+								"checkOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "user",
+								"value": "40",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{techno_url}}/reset/updatePassword",
+							"host": [
+								"{{techno_url}}"
+							],
+							"path": [
+								"reset",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rides",
+			"item": [
+				{
+					"name": "Driver",
+					"item": [
+						{
+							"name": "Cancelled Ride",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "ride",
+										"value": "884",
+										"type": "default"
+									},
+									{
+										"key": "cancelTime",
+										"value": "1:20",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{live}}/rides/cancelled/driver",
+									"host": [
+										"{{live}}"
+									],
+									"path": [
+										"rides",
+										"cancelled",
+										"driver"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PickUP Ride",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "ride",
+										"value": "909",
+										"type": "default"
+									},
+									{
+										"key": "startTime",
+										"value": "09:00",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{local}}/rides/pickup/ride",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"rides",
+										"pickup",
+										"ride"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ride Way",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "ride",
+										"value": "909",
+										"type": "default"
+									},
+									{
+										"key": "startTime",
+										"value": "09:10",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "date",
+											"value": "",
+											"type": "default"
+										},
+										{
+											"key": "time",
+											"value": "",
+											"type": "default"
+										},
+										{
+											"key": "details",
+											"value": "",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/rides/theway/ride",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"rides",
+										"theway",
+										"ride"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ride Done",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "ride",
+										"value": "884",
+										"type": "default"
+									},
+									{
+										"key": "endTime",
+										"value": "12:51",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{live}}/rides/done/ride",
+									"host": [
+										"{{live}}"
+									],
+									"path": [
+										"rides",
+										"done",
+										"ride"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Accept Driver Ride",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "driver",
+										"value": "8",
+										"type": "default"
+									},
+									{
+										"key": "ride",
+										"value": "909",
+										"type": "text"
+									},
+									{
+										"key": "startTime",
+										"value": "08:54",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{local}}/rides/accept/driver",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"rides",
+										"accept",
+										"driver"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "History Rating",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "driver",
+										"value": "8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{techno_url}}/driver/rates",
+									"host": [
+										"{{techno_url}}"
+									],
+									"path": [
+										"driver",
+										"rates"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Client",
+					"item": [
+						{
+							"name": "History Rides",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "client",
+										"value": "53",
+										"type": "default"
+									},
+									{
+										"key": "driver",
+										"value": "8",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{techno_url}}/rides/history/client",
+									"host": [
+										"{{techno_url}}"
+									],
+									"path": [
+										"rides",
+										"history",
+										"client"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancelled Search",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "client",
+										"value": "56",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{techno_url}}/client/cancel/search",
+									"host": [
+										"{{techno_url}}"
+									],
+									"path": [
+										"client",
+										"cancel",
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancelled Ride",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "ride",
+										"value": "1109",
+										"type": "default"
+									},
+									{
+										"key": "cancelTime",
+										"value": "8:56",
+										"type": "default"
+									},
+									{
+										"key": "type",
+										"value": "driver",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "reasonCancelled",
+											"value": "ddddddddd",
+											"description": "reason cancellation",
+											"type": "default"
+										},
+										{
+											"key": "cancelTime",
+											"value": "11:10",
+											"description": "time cancellation",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{live}}/rides/cancelled/ride",
+									"host": [
+										"{{live}}"
+									],
+									"path": [
+										"rides",
+										"cancelled",
+										"ride"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rating Ride",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "ride",
+										"value": "936",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "rate",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{live}}/rides/rating/ride",
+									"host": [
+										"{{live}}"
+									],
+									"path": [
+										"rides",
+										"rating",
+										"ride"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "calculate Ride",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "client",
+										"value": "53",
+										"type": "default"
+									},
+									{
+										"key": "dlat",
+										"value": "33.0000125",
+										"type": "text"
+									},
+									{
+										"key": "dlng",
+										"value": "33.0444444",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "start_ride",
+											"value": "Qetaa AZ Zaweyah",
+											"type": "text"
+										},
+										{
+											"key": "end_ride",
+											"value": "Al Giza Desert",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "2 h",
+											"type": "text"
+										},
+										{
+											"key": "start_time",
+											"value": "8:50",
+											"type": "text"
+										},
+										{
+											"key": "distance",
+											"value": "4 km",
+											"type": "text"
+										},
+										{
+											"key": "cost",
+											"value": "50",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "31.0277454",
+											"type": "text"
+										},
+										{
+											"key": "lng",
+											"value": "31.0277253",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{live}}/rides/calculate/ride",
+									"host": [
+										"{{live}}"
+									],
+									"path": [
+										"rides",
+										"calculate",
+										"ride"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "calculate Ride Test",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "default"
+									},
+									{
+										"key": "client",
+										"value": "53",
+										"type": "default"
+									},
+									{
+										"key": "dlat",
+										"value": "33.0000125",
+										"type": "text"
+									},
+									{
+										"key": "dlng",
+										"value": "33.0444444",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "start_ride",
+											"value": "Qetaa AZ Zaweyah",
+											"type": "text"
+										},
+										{
+											"key": "end_ride",
+											"value": "Al Giza Desert",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "4 h",
+											"type": "text"
+										},
+										{
+											"key": "start_time",
+											"value": "1:30",
+											"type": "text"
+										},
+										{
+											"key": "end_time",
+											"value": "5:30",
+											"type": "text"
+										},
+										{
+											"key": "distance",
+											"value": "4 km",
+											"type": "text"
+										},
+										{
+											"key": "cost",
+											"value": "30",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "31.0277454",
+											"type": "text"
+										},
+										{
+											"key": "lng",
+											"value": "31.0277253",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{test_url}}/rides/test/calculate/ride",
+									"host": [
+										"{{test_url}}"
+									],
+									"path": [
+										"rides",
+										"test",
+										"calculate",
+										"ride"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Coupon",
+			"item": [
+				{
+					"name": "check Coupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "coupon",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/checkCoupon",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"checkCoupon"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tracking Driver",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{techno_url}}/tracking?id=8",
+					"host": [
+						"{{techno_url}}"
+					],
+					"path": [
+						"tracking"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Tracking Driver",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{techno_url}}/rides/update/tracking",
+					"host": [
+						"{{techno_url}}"
+					],
+					"path": [
+						"rides",
+						"update",
+						"tracking"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://127.0.0.1:8001/api",
+			"type": "string"
+		},
+		{
+			"key": "live",
+			"value": "https://venusride.technomasrsystems.com/api",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1073519462014",
+    "project_id": "venus-client-62ecc",
+    "storage_bucket": "venus-client-62ecc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073519462014:android:4b843fe5b9058d74cd3a2f",
+        "android_client_info": {
+          "package_name": "com.technomasr.venusrideclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073519462014-06b4q2j0ipn1st2pajk0susfknrre3mg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIsYZ_GgnRSoW1rwlhsIGlC7JRwPYJOt0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073519462014-06b4q2j0ipn1st2pajk0susfknrre3mg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
