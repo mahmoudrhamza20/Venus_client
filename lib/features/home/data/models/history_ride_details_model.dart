@@ -46,6 +46,7 @@ class HistotyRideDetails {
     String distance;
     String time;
     dynamic total;
+    dynamic discount;
     Driver driver;
     DateTime date;
     dynamic reasonCancelled;
@@ -65,6 +66,7 @@ class HistotyRideDetails {
         required this.distance,
         required this.time,
         required this.total,
+        required this.discount,
         required this.driver,
         required this.date,
         this.reasonCancelled,
@@ -85,6 +87,7 @@ class HistotyRideDetails {
         distance: json["distance"],
         time: json["Time"],
         total: json["Total"],
+        discount: json["discount"],
         driver: Driver.fromJson(json["driver"]),
         date: DateTime.parse(json["date"]),
         reasonCancelled: json["reason_cancelled"],

@@ -29,6 +29,7 @@ String  currentLocation = LocaleKeys.yourLocation.tr() ;
 late Position currentPosition;
 late GoogleMapController mapController;
 late LatLng destinationPosition;
+ Position driverLocation = currentPosition;
 late DirectionDetails directionDetailsGlobal;
 TextEditingController currentLocationController = TextEditingController();
 TextEditingController destinationController = TextEditingController();
@@ -54,13 +55,13 @@ final assetsAudioPlayer = AssetsAudioPlayer();
  late double lng;
 DatabaseReference refClientInfo = FirebaseDatabase.instance.ref("Client/${CacheHelper.getData(key:'userId')}");
 Country selectedCountry = Country(
-    phoneCode: '20',
-    countryCode: 'EG',
+    phoneCode: '962',
+    countryCode: 'JO',
     e164Sc: 0,
     geographic: true,
     level: 1,
-    name: 'Egypt',
-    example: 'Egypt',
-    displayName: 'Egypt',
-    displayNameNoCountryCode: 'EG',
+    name: 'Jordan',
+    example: 'Jordan',
+    displayName: 'Jordan',
+    displayNameNoCountryCode: 'JO',
     e164Key: '');

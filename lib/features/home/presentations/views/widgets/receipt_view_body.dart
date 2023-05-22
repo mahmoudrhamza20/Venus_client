@@ -12,11 +12,10 @@ import '../../../../../core/widgets/custom_icon_back.dart';
 import '../../../../../translations/locale_keys.g.dart';
 import '../../../../after_splash/presentations/views/after_splash_view.dart';
 import '../complaints_view.dart';
-import '../home_view.dart';
 import 'bottom_sheets.dart';
 
 class ReceiptViewBody extends StatelessWidget {
-  const ReceiptViewBody({Key? key, required this.startTime, required this.endTime, required this.startTAdd, required this.endAdd, required this.cost, required this.fee, required this.total, required this.time, required this.dis,required this.late}) : super(key: key);
+  const ReceiptViewBody({Key? key, required this.startTime, required this.endTime, required this.startTAdd, required this.endAdd, required this.cost, required this.fee, required this.total, required this.time, required this.dis,required this.late,required this.discount}) : super(key: key);
 final String startTime;
    final String endTime;
    final String startTAdd;
@@ -27,6 +26,7 @@ final String startTime;
    final String time;
    final String dis;
    final dynamic late;
+   final dynamic discount;
   @override
   Widget build(BuildContext context) {
    
@@ -178,7 +178,7 @@ final String startTime;
                           SizedBox(
                             height: 15.h,
                           ),
-                           SupTotalSection(cost: cost,dis: dis,fee: fee,time: time,total: total,late: late,),
+                           SupTotalSection(cost: cost,dis: dis,fee: fee,time: time,total: total,late: late,discount:discount),
                         ],
                       ),
                     ),
@@ -234,7 +234,7 @@ final String startTime;
 
 class SupTotalSection extends StatelessWidget {
   const SupTotalSection({
-    super.key,  this.cost,  this.fee,  this.total,  this.time,  this.dis, this.late,
+    super.key,  this.cost,  this.fee,  this.total,  this.time,  this.dis, this.late, this.discount,
   });
   final String? cost;
    final String? fee;
@@ -242,6 +242,7 @@ class SupTotalSection extends StatelessWidget {
    final String?time;
    final String?dis;
    final dynamic late;
+   final dynamic discount;
   @override
   Widget build(BuildContext context) {
     final getCubit = GetDirectionCubit.of(context);
@@ -320,6 +321,18 @@ class SupTotalSection extends StatelessWidget {
               ),
               Text(
                 '${double.parse(late)/100}  ${LocaleKeys.dinar.tr()}',
+                style: FontStyles.textStyle15.copyWith(color: Colors.black),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+             Text('Discount',
+                style: FontStyles.textStyle15.copyWith(color: Colors.black),
+              ),
+              Text(
+                '${((discount))} ${'%'}',
                 style: FontStyles.textStyle15.copyWith(color: Colors.black),
               ),
             ],

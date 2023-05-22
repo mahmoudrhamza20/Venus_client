@@ -11,6 +11,7 @@ class ReceiptModel {
  final String startRide;
  final String startTime;
  final dynamic late;
+ final dynamic discount;
 
   ReceiptModel( {
    required this.Time, 
@@ -24,7 +25,8 @@ class ReceiptModel {
    required this.fee,
    required this.Total,
    required this.startRide,
-   required this.late
+   required this.late,
+   required this.discount,
    });
 
   

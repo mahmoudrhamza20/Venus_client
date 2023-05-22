@@ -4,7 +4,7 @@ import 'package:taxi/features/home/presentations/views/widgets/receipt_view_body
 import 'package:taxi/features/home/presentations/views_models/get_direction_cubit/get_direction_cubit.dart';
 
 class ReceiptView extends StatelessWidget {
-  const ReceiptView({Key? key, required this.startTime, required this.endTime, required this.startTAdd, required this.endAdd, required this.cost, required this.fee, required this.total, required this.time, required this.dis, required this.late}) : super(key: key);
+  const ReceiptView({Key? key, required this.startTime, required this.endTime, required this.startTAdd, required this.endAdd, required this.cost, required this.fee, required this.total, required this.time, required this.dis, required this.late,required this.discount}) : super(key: key);
    final String startTime;
    final String endTime;
    final String startTAdd;
@@ -15,6 +15,7 @@ class ReceiptView extends StatelessWidget {
    final String time;
    final String dis;
    final dynamic late;
+   final dynamic discount;
    
      
   @override
@@ -24,7 +25,7 @@ class ReceiptView extends StatelessWidget {
       child:  WillPopScope(
        onWillPop: () async => false,
         child: Scaffold(
-          body: SafeArea(child: ReceiptViewBody(cost: cost, dis: dis, endAdd: endAdd, fee: fee, startTime: startTime, endTime: endTime, startTAdd: startTAdd, time: time, total: total, late: late,)),
+          body: SafeArea(child: ReceiptViewBody(cost: cost, dis: dis, endAdd: endAdd, fee: fee, startTime: startTime, endTime: endTime, startTAdd: startTAdd, time: time, total: total, late: late, discount: discount,)),
         ),
       ),
     );

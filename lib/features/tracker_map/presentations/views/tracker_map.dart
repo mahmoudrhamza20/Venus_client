@@ -70,7 +70,7 @@ class _TrackerMapViewState extends State<TrackerMapView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-              create: (context) => GetDirectionCubit()..getDriverData()..setCustomMarker()..getCurrentPositionUpdate()..getReceipt()..drivercancelled(context),
+              create: (context) => GetDirectionCubit()..getPolyPoints()..setCustomMarker()..getCurrentPositionUpdate()..getReceipt()..drivercancelled(context)..getDriverLocation(),
             child: WillPopScope(
                onWillPop: () async => false,
               child: Scaffold(
@@ -105,17 +105,18 @@ class _TrackerMapViewState extends State<TrackerMapView> {
                   },
                   markers: {
                     Marker(
-                      rotation: currentPosition.heading,
+                     
                       markerId: const MarkerId("CurrentPosition"),
                       icon: cubit.currentLocationIcon,
                       position: LatLng(
                           currentPosition.latitude, currentPosition.longitude),
                     ),
                     Marker(
+                     rotation: driverLocation.heading,
                       markerId: const MarkerId("destination"),
                       icon: cubit.destinationIcon,
                     // position: LatLng(cubit.latx,cubit.lngx),
-                   position: const LatLng(31.006520,31.326520),
+                   position:  LatLng(driverLocation.latitude,driverLocation.longitude),
                     ),
                   },
                   myLocationButtonEnabled: true,
@@ -123,7 +124,7 @@ class _TrackerMapViewState extends State<TrackerMapView> {
                   onMapCreated: (GoogleMapController controller) {
                     controller.setMapStyle(mapTheme);
                     cubit.controllerx.complete(controller);
-                    mapController = controller;
+                  cubit.mapController = controller;
                   },
                 ),
                 Padding(

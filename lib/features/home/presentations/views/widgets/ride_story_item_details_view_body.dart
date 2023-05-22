@@ -16,7 +16,7 @@ import '../../views_models/get_direction_cubit/get_direction_cubit.dart';
 import '../support_view.dart';
 
 class RideStoryItemDetailsViewBody extends StatelessWidget {
-  const RideStoryItemDetailsViewBody({Key? key, required this.endTime, required this.startTime, required this.startTAdd, required this.endAdd, required this.cost, required this.fee, required this.total, required this.time, required this.dis, required this.photo, required this.name, required this.type, required this.rate,required this.late, }) : super(key: key);
+  const RideStoryItemDetailsViewBody({Key? key, required this.endTime, required this.startTime, required this.startTAdd, required this.endAdd, required this.cost, required this.fee, required this.total, required this.time, required this.dis, required this.photo, required this.name, required this.type, required this.rate,required this.late,required this.discount, }) : super(key: key);
 
 final String endTime;
  final String startTime;
@@ -32,6 +32,7 @@ final String endTime;
    final String type;
    final dynamic rate;
    final dynamic late;
+   final dynamic discount;
 
   @override
   Widget build(BuildContext context) {
@@ -269,13 +270,13 @@ final String endTime;
                dis,
                 style: FontStyles.textStyle15.copyWith(color: kBlack),
               ),
-               SizedBox(
-                width: 2.w,
-              ),
-              Text(
-                LocaleKeys.km.tr(),
-                style: FontStyles.textStyle15.copyWith(color: kBlack),
-              ),
+              //  SizedBox(
+              //   width: 2.w,
+              // ),
+              // Text(
+              //   LocaleKeys.km.tr(),
+              //   style: FontStyles.textStyle15.copyWith(color: kBlack),
+              // ),
               SizedBox(
                 width: 2.w,
               ),
@@ -290,13 +291,13 @@ final String endTime;
                 time,
                 style: FontStyles.textStyle15.copyWith(color: kBlack),
               ),
-               SizedBox(
-                width: 2.w,
-              ),
-              Text(
-                LocaleKeys.mins.tr(),
-                style: FontStyles.textStyle15.copyWith(color: kBlack),
-              ),
+              //  SizedBox(
+              //   width: 2.w,
+              // ),
+              // Text(
+              //   LocaleKeys.mins.tr(),
+              //   style: FontStyles.textStyle15.copyWith(color: kBlack),
+              // ),
             ],
           ),
           Row(
@@ -334,6 +335,18 @@ final String endTime;
               ),
               Text(
                 '${late/100} ${LocaleKeys.dinar.tr()}',
+                style: FontStyles.textStyle15.copyWith(color: Colors.black),
+              ),
+            ],
+          ),
+           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+             Text('Discount',
+                style: FontStyles.textStyle15.copyWith(color: Colors.black),
+              ),
+              Text(
+                '${((discount))} ${'%'}',
                 style: FontStyles.textStyle15.copyWith(color: Colors.black),
               ),
             ],

@@ -54,12 +54,12 @@ class GetDirectionCubit extends Cubit<GetDirectionState> {
   BitmapDescriptor currentLocationIcon = BitmapDescriptor.defaultMarker;
 
   void getPolyPoints() async {
+    emit(PolyLoaded());
     PolylinePoints polylinePoints = PolylinePoints();
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-      mapKey, // Your Google Map Key
-     PointLatLng(currentPosition.latitude, currentPosition.longitude),
-    // PointLatLng(latx,lngx
-    const PointLatLng(31.026520,31.226520),
+      mapKey,
+      PointLatLng(currentPosition.latitude, currentPosition.longitude),
+      PointLatLng(driverLocation.latitude, driverLocation.longitude),
     );
     if (result.points.isNotEmpty) {
       for (var point in result.points) {
@@ -67,7 +67,7 @@ class GetDirectionCubit extends Cubit<GetDirectionState> {
           LatLng(point.latitude, point.longitude),
         );
       }
-      
+      emit(PolyLoading());
     }
   }
 
@@ -140,50 +140,88 @@ class GetDirectionCubit extends Cubit<GetDirectionState> {
   }
 
 //////////
-void getRequest()async{ listenNotification.onValue.listen((DatabaseEvent event) {
-  emit(GetDirectionGetRequest());
-if(event.snapshot.value == null){
- emit(GetDirectionDoneRequest());
-  return ;
-}else{
-  final data = event.snapshot.value as Map;
-      String board = data['board'].toString();
-       String driver = data['driver'].toString();
-       String phone = data['phone'].toString();
-       String photo = data['photo'].toString();
-       int rate = data['rate'];
-       String type = data['type'].toString();
-       String IDdriver = data['IDdriver'].toString();
-       dynamic late = data['late'];
-       int ride = data['ride'];
-       driverId =IDdriver; 
-       notificationDetails = NotificationDetails(
-         board: board,
-         driver: driver,
-         phone: phone,
-         photo: photo,
-         rate: rate,
-         type: type,
-         IDdriver: IDdriver,
-         late: late,
-         ride: ride,
-       );
-       driverId = IDdriver ;
-       driverPhone = phone;
-       print('222222222222222222222222');
-       print(driverId);
-       print(IDdriver);
-        assetsAudioPlayer.play();
-      Timer(const Duration(seconds: 5), () {assetsAudioPlayer.stop(); });
-        showSnackBar(LocaleKeys.driverIsAccepted.tr(),margin: EdgeInsets.only(bottom: 500.h,left: 25.w,right: 25.w));
+void getRequest() async {
+    listenNotification.onValue.listen((DatabaseEvent event) async {
+      emit(GetDirectionGetRequest());
+      if (event.snapshot.value == null) {
+        emit(GetDirectionDoneRequest());
+        return;
+      } else {
+        final data = event.snapshot.value as Map;
+        String board = data['board'].toString();
+        String driver = data['driver'].toString();
+        String phone = data['phone'].toString();
+        String photo = data['photo'].toString();
+        int rate = data['rate'];
+        String type = data['type'].toString();
+        String iDdriver = data['IDdriver'].toString();
+        int ride = data['ride'];
+        driverId = iDdriver;
+        driverPhone = phone;
         print('222222222222222222222222');
-       //MagicRouter.navigateTo(TrackerMapView(lat: lat, lng: lng,));
-       MagicRouter.navigateTo(TrackerMapView(iDdriver: IDdriver, board: board, driver: driver, phone: phone, photo: photo, rate: rate, ride: ride, type: type,));
-       listenNotification.remove();
-       emit(GetDirectionDoneRequest());
-} 
-     });
-   }
+        print(driverId);
+        assetsAudioPlayer.play();
+        Timer(const Duration(seconds: 3), () {
+          assetsAudioPlayer.stop();
+        });
+        showSnackBar(LocaleKeys.driverIsAccepted.tr(),
+            margin: EdgeInsets.only(bottom: 500.h, left: 25.w, right: 25.w));
+        print('222222222222222222222222');
+        emit(GetDirectionDoneRequest());
+        getDriverLocation();
+        MagicRouter.navigateTo(TrackerMapView(
+          iDdriver: iDdriver,
+          board: board,
+          driver: driver,
+          phone: phone,
+          photo: photo,
+          rate: rate,
+          ride: ride,
+          type: type,
+        ));
+        listenNotification.remove();
+        emit(GetDirectionGetRequest());
+      }
+    });
+  }
+  Future<Position> getDriverLocation() async {
+    emit(GetDriverDataLoad());
+    reference.onValue.listen((DatabaseEvent event) async {
+      emit(GetDriverDataLoaded());
+      if (event.snapshot.value == null) {
+        emit(GetDriverDataLoadingDone());
+        return;
+      } else {
+        final Map data = event.snapshot.value as Map;
+        String latx = data['lat'].toString();
+        String lngx = data['lng'].toString();
+        String accuracy = data['accuracy'].toString();
+        String altitude = data['altitude'].toString();
+        String speed = data['speed'].toString();
+        String speedAccuracy = data['speedAccuracy'].toString();
+        String heading = data['heading'].toString();
+        log(latx.toString());
+        log(lngx.toString());
+        driverLocation = Position(
+            latitude: double.parse(latx),
+            longitude: double.parse(lngx),
+            accuracy: double.parse(accuracy),
+            altitude: double.parse(altitude),
+            heading: double.parse(heading),
+            speed: double.parse(speed),
+            speedAccuracy: double.parse(speedAccuracy),
+            timestamp: null);
+        GoogleMapController googleMapController = await controllerx.future;
+        googleMapController.animateCamera(CameraUpdate.newCameraPosition(
+            CameraPosition(
+                zoom: 17.5,
+                target: LatLng(
+                    driverLocation.latitude, driverLocation.longitude))));
+        emit(GetDriverDataLoadingDone());
+      }
+    });
+    return driverLocation;
+  }
 
 
 //////////
@@ -208,6 +246,7 @@ if(event.snapshot.value == null){
       String total = data['Total'].toString();
       String startRide = data['startRide'].toString();
       String late = data['late'].toString();
+      String discount = data['discount'].toString();
       receiptModel = ReceiptModel(
         Time: time,
         clientId: clientId,
@@ -221,9 +260,10 @@ if(event.snapshot.value == null){
         Total:total,
         startRide: startRide,
         late: late,
+        discount: discount,
       );
       
-     MagicRouter.navigateTo( ReceiptView(dis: distance, endAdd: endRide, endTime: endTime, fee: fee, startTime: startTime, startTAdd: startRide, time: time, cost:cost, total:data['Total'].toString(),late: late,)
+     MagicRouter.navigateTo( ReceiptView(dis: distance, endAdd: endRide, endTime: endTime, fee: fee, startTime: startTime, startTAdd: startRide, time: time, cost:cost, total:data['Total'].toString(),late: late, discount: discount,)
      );
       emit(GetDirectionFinish());
      print(distance);
@@ -235,33 +275,7 @@ if(event.snapshot.value == null){
   }
 
 
-   void getDriverData() {
-    reference.onValue.listen((DatabaseEvent event) {
-      emit(GetDriverDataLoaded());
-      if (event.snapshot.value == null) {
-         emit(GetDriverDataLoaded());
-        //  log('driverId =');
-        //  log(driverId!);
-        return;
-      } else {
-        final Map data = event.snapshot.value as Map;
-         latx = data['lat'];
-         lngx = data['lng'];
-        //  driverModel = DriverModel(
-        // lat: lat,
-        // lng: lng,
-        // );
-        print('33333333333333333333333333333333333');
-        print(latx);
-        print(lngx);
-         log('driverId =');
-         log(driverId!);
-        print('33333333333333333333333333333333333');
-        emit(GetDriverDataLoadingDone());
-      }
-
-    });
-  }
+   
 
 
 /////////////

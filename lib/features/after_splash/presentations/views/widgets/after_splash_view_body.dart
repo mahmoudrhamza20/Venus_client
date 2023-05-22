@@ -13,6 +13,7 @@ import '../../../../../core/widgets/custom_icon_back.dart';
 import '../../../../../core/widgets/custom_snackbar.dart';
 import '../../../../../global_variables.dart';
 import '../../../../../translations/locale_keys.g.dart';
+import '../../../../home/presentations/views/widgets/bottom_sheets.dart';
 import '../../../../home/presentations/views_models/get_direction_cubit/get_direction_cubit.dart';
 import '../../../../home/presentations/views_models/post_details_cubit/post_details_cubit.dart';
 import 'dart:developer';
@@ -94,12 +95,7 @@ class _AfterSplashViewBodyState extends State<AfterSplashViewBody> {
                       icon: Icons.location_off,
                       text: LocaleKeys.withoutDestination.tr(),
                       onTap: () {
-                postCubit.postData(
-                  startRide:'Current Location',
-                  currentLat:currentPosition.latitude,
-                  currentLong:currentPosition.longitude,
-                  cost:0,
-                  );
+                  buildBookRideShowModalBottomSheetWithoutDes(context);
                   getDirectionCubit.driverArrived();
                       },
                     ),

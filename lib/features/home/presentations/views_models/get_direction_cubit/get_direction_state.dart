@@ -17,5 +17,7 @@ class GetDriverDataLoaded extends GetDirectionState {}
 class GetDriverDataLoading extends GetDirectionState {}
 class GetDriverDataLoadingDone extends GetDirectionState {}
 class GetDriverDataLoad extends GetDirectionState {}
+class PolyLoaded extends GetDirectionState {}
+class PolyLoading extends GetDirectionState {}
 // class GetDirectionGetRequest extends GetDirectionState {}
 // class GetDirectionDoneRequest extends GetDirectionState {}

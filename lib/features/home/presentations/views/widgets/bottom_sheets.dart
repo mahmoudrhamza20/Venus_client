@@ -432,10 +432,9 @@ Future<dynamic> buildBookRideShowModalBottomSheet(BuildContext context) {
                   getDirectionCubit.driverArrived();
                   //getDirectionCubit.drivercancelled(context);
                  // MagicRouter.navigateTo(const SearchingCarView())
-                 log("${getDirectionCubit.directionDetails!.distanceValue!}");
                  log( getDirectionCubit.directionDetails!.durationText!,);                 
-                 log( "${postCubit .estimateFares(getDirectionCubit.directionDetails!)}");                 
-
+                 log( getDirectionCubit.directionDetails!.endAddress!,);                 
+                
                 },
               ),
             ))
@@ -445,6 +444,110 @@ Future<dynamic> buildBookRideShowModalBottomSheet(BuildContext context) {
     ),
   );
 }
+
+Future<dynamic> buildBookRideShowModalBottomSheetWithoutDes(BuildContext context) {
+  final postCubit = PostDetailsCubit.of(context);
+  final getDirectionCubit = GetDirectionCubit.of(context);
+  final promoCodeCubit = PromoCodeCubit.of(context);
+//  TextEditingController controller = TextEditingController();
+  return showModalBottomSheet(
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(16.0.r),
+        topRight: Radius.circular(16.0.r),
+      ),
+    ),
+    context: context,
+    builder: (context) => Padding(
+      padding: EdgeInsets.all(20.0.w),
+      child: SizedBox(
+        height: 250.h,
+        child: Column(
+          children: [
+            BlocListener<PromoCodeCubit, PromoCodeState>(
+              listener: (context, state) {},
+            
+              child: BlocBuilder<PromoCodeCubit,PromoCodeState>(
+                builder: (BuildContext context, state) {
+                  return state is SendMsgLoaded? const CircularProgressIndicator()
+                  : promoCodeCubit.promoCodeModel != null ? Text( promoCodeCubit.promoCodeModel!.message,  style: FontStyles.textStyle18, ) :const Text('');
+          
+                
+                 },
+               ),
+            ),
+            SizedBox(
+              height: 15.h,
+            ),
+             BlocListener<PromoCodeCubit,PromoCodeState>(
+              listener: (BuildContext context, state) {  },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: 200.w,
+                    child: customTextField(
+                          color: const Color(0xffD5DDE0),
+                          hintText: LocaleKeys.promoCode.tr(),
+                          isPassword: false,
+                          type: TextInputType.text,
+                          controller: promoCodeCubit.couponController
+                          ),
+                  ),
+                  SizedBox(
+                      width: 80.w,
+                      height: 48.h,
+                      child:  CustomButton(
+                        text: LocaleKeys.active.tr(),
+                        textColor: kWhite,
+                        backgroundColor: kDeepBlue,
+                        onPressed:() => promoCodeCubit.promoCode(),
+                      ))
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            Center(
+                child: BlocListener<PostDetailsCubit, PostDetailsState>(
+              listener: (context, state) {},
+              child: CustomButton(
+                backgroundColor: kDeepBlue,
+                text: LocaleKeys.bookRide.tr(),
+                textColor: kWhite,
+                onPressed: () async {
+                  var connectivityResult =
+                      await (Connectivity().checkConnectivity());
+                  if (connectivityResult != ConnectivityResult.mobile &&
+                      connectivityResult != ConnectivityResult.wifi) {
+                    showSnackBar(
+                      LocaleKeys.noInternetConnectivity.tr(),
+                    );
+                  }
+                  postCubit.postData(
+                  startRide:'Current Location',
+                  currentLat:currentPosition.latitude,
+                  currentLong:currentPosition.longitude,
+                  cost:0,
+                  );
+                    getDirectionCubit.driverArrived();
+
+                  //getDirectionCubit.drivercancelled(context);
+                 // MagicRouter.navigateTo(const SearchingCarView())
+                 log( getDirectionCubit.directionDetails!.durationText!,);                 
+                 log( getDirectionCubit.directionDetails!.endAddress!,);                 
+                
+                },
+              ),
+            ))
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
 
 Future<dynamic> buildRateModalBottomSheet(BuildContext context) {
   // final cubit = GetDirectionCubit.of(context);

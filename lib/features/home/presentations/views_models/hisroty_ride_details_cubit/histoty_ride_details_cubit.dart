@@ -45,6 +45,7 @@ class HistotyRideDetailsCubit extends Cubit<HistotyRideDetailsState> {
                        endTime: histotyRideDetailsData!.endTime, 
                        endAdd: histotyRideDetailsData!.endRide,
                        late: histotyRideDetailsData!.late,
+                       discount: histotyRideDetailsData!.discount,
 
 
             )
