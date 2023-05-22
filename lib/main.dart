@@ -20,6 +20,7 @@ import 'core/utils/network_info.dart';
 import 'features/auth/presentation/views_models/login_cubit/login_cubit.dart';
 import 'features/home/presentations/views_models/cancel_search_cubit/cancelled_search_cubit.dart';
 import 'features/home/presentations/views_models/get_direction_cubit/get_direction_cubit.dart';
+import 'features/home/presentations/views_models/profile_cubit/profile_cubit.dart';
 import 'features/home/presentations/views_models/promo_code_cubit/promo_code_cubit.dart';
 import 'features/home/presentations/views_models/rate_model/rate_cubit.dart';
 
@@ -110,6 +111,9 @@ class _TaxiState extends State<Taxi> {
           providers: [
             BlocProvider(
               create: (context) => LoginCubit(),
+            ),
+              BlocProvider(
+              create: (context) => ProfileCubit()..getProfileDetails(),
             ),
             BlocProvider(
               create: (context) => GetDirectionCubit(),

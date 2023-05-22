@@ -67,23 +67,7 @@ class EditProfileViewBody extends StatelessWidget {
                               alignment: Alignment.topRight,
                               children: [
                                 cubit.photo == null
-                                    ? cubit.userData?.photo == null
-                                    ?
-                                // image != null
-                                //     ?
-                                // Container(
-                                //         width: 90.w,
-                                //         height: 90.w,
-                                //         decoration: BoxDecoration(
-                                //           shape: BoxShape.circle,
-                                //           image: DecorationImage(
-                                //               fit: BoxFit.cover,
-                                //               image: FileImage(
-                                //                 image!,
-                                //               )),
-                                //         ),
-                                //       )
-                                //     :
+                                    ? cubit.userData?.photo == null?
                                 Container(
                                     width: 90.w,
                                     height: 90.w,
@@ -128,8 +112,7 @@ class EditProfileViewBody extends StatelessWidget {
                                           shape: BoxShape.circle,
                                           color: kWhite,
                                         ),
-                                        // child: Icon(Icons.edit_outlined),
-                                      ),
+                                         ),
                                       Positioned(
                                           bottom: 5.h,
                                           left: 5.w,
@@ -170,11 +153,6 @@ class EditProfileViewBody extends StatelessWidget {
                                     icon: Icons.person_2_outlined,
                                       controller: cubit.nameController
                                   ),
-                                  // buildTextFieldOfEditProfile(
-                                  //   hint: 'carson@mobility.com',
-                                  //   icon: Icons.mail,
-                                  //     controller: cubit.emailController
-                                  // ),
                                   buildTextFieldOfEditProfile(
                                     hint: '+1 926 483 32 52',
                                     icon: Icons.phone,

@@ -33,7 +33,8 @@ class PostDetailsRepo {
      double? cost,
      String? distance,
      String? time,
-     int? coupunId,}
+     int? coupunId,
+     }
 
       ) async {
     final response = await DioHelper.post(EndPoints.calculateRide,

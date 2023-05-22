@@ -37,7 +37,6 @@ class UserDta {
     required this.id,
     required this.name,
     this.userName,
-  
     required this.language,
     required this.phone,
     required this.photo,
@@ -64,8 +63,7 @@ class UserDta {
   Map<String, dynamic> toJson() => {
     "id": id,
     "name": name,
-    "userName": userName,
-    
+    "userName": userName,  
     "language": language,
     "phone": phone,
     "photo": photo,

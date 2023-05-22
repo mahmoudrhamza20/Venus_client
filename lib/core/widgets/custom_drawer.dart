@@ -14,6 +14,7 @@ import '../../features/home/presentations/views/privacy_policy_view.dart';
 import '../../features/home/presentations/views/support_view.dart';
 import '../../features/home/presentations/views/ride_history_view.dart';
 import '../../features/home/presentations/views/widgets/bottom_sheets.dart';
+import '../../features/home/presentations/views_models/profile_cubit/profile_cubit.dart';
 import '../../translations/locale_keys.g.dart';
 import '../utils/assets.dart';
 import '../utils/constants.dart';
@@ -29,7 +30,8 @@ Drawer customDrawer(BuildContext context) {
     'عربي  🇸🇦',
     '🇺🇸  English',
   ];
-  return Drawer(
+   final cubit = ProfileCubit.of(context);
+  return Drawer( 
       child: SingleChildScrollView(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,20 +65,14 @@ Drawer customDrawer(BuildContext context) {
                                   image: DecorationImage(
                                     fit: BoxFit.cover,
                                     image: NetworkImage(
-                                        CacheHelper.getData(key: 'photo')
-                                            .toString()),
+                                        CacheHelper.getData(key: 'photo').toString()
+                                        ),
+                                    // image: NetworkImage(
+                                    //     cubit.userData!.photo
+                                    //     ),
                                   ),
                                 ),
                               )
-                            // Container(
-                            //     width: 80.w,
-                            //     height: 80.w,
-                            //     decoration: const BoxDecoration(
-                            //       shape: BoxShape.circle,
-                            //     ),
-                            // child: Image.network(
-                            //     fit: BoxFit.cover,
-                            //     AppStorage.getUserData.data.photo))
                             : Container(
                                 width: 80.w,
                                 height: 80.w,
@@ -139,12 +135,7 @@ Drawer customDrawer(BuildContext context) {
           title: LocaleKeys.rideHistory.tr(),
           onTap: () => MagicRouter.navigateTo(const RideStoryView()),
         ),
-        // const ListTileOfDrawer(
-        //   icon: Icons.more_vert,
-        //   title: 'Change Language ',
-        //
-        // ),
-        Padding(
+          Padding(
           padding: EdgeInsets.only(left: 0.w),
           child: ListTile(
             iconColor: const Color(0xff97ADB6),
