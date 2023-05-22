@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';
@@ -78,6 +77,7 @@ class ProfileRepo {
     print(CacheHelper.getData(key: 'userId'));
     final response = await DioHelper.post(EndPoints.updateProfile,
         headers: {
+          'lang': AppStorage.getLang,
           'user': CacheHelper.getData(key: 'userId'),
           'Accept': 'application/json',
         },
