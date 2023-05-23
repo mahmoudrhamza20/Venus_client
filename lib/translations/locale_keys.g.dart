@@ -104,5 +104,7 @@ abstract class  LocaleKeys {
   static const driverIsAccepted = 'driverIsAccepted';
   static const backToHome = 'backToHome';
   static const tripBookedSuccessfully = 'tripBookedSuccessfully';
+  static const ifyoucancelthetriphalfdinarwillbeaddedtoyournexttrip = 'ifyoucancelthetriphalfdinarwillbeaddedtoyournexttrip';
+  static const note = 'note';
 
 }

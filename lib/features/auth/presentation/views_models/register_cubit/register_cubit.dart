@@ -12,9 +12,7 @@ import '../../../../../core/utils/magic_router.dart';
 import '../../../../../core/widgets/custom_snackbar.dart';
 import '../../../../../global_variables.dart';
 import '../../../../../translations/locale_keys.g.dart';
-import '../../../../home/presentations/views/home_view.dart';
 import '../../views/verify_code_register_view.dart';
-import '../../views/verify_code_view.dart';
 part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {

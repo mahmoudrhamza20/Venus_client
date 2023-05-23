@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +8,6 @@ import 'package:taxi/features/home/presentations/views_models/ride_history_cubit
 import '../../../../../core/utils/magic_router.dart';
 import '../../../../../core/widgets/custom_icon_back.dart';
 import '../../views_models/hisroty_ride_details_cubit/histoty_ride_details_cubit.dart';
-import '../ride_story_item_details_view.dart';
 
 class RideStoryViewBody extends StatelessWidget {
   const RideStoryViewBody({Key? key}) : super(key: key);

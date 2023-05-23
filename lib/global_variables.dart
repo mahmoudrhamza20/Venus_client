@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:assets_audio_player/assets_audio_player.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,7 +11,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:taxi/translations/locale_keys.g.dart';
 import 'core/utils/cache_helper.dart';
 import 'features/home/data/models/direction_details_model.dart';
-import 'features/home/presentations/views_models/post_details_cubit/post_details_cubit.dart';
 
                
 String mapKey = 'AIzaSyBaj8TdogqYDV8xOtl2HyJT7HO8m1IkcIE';

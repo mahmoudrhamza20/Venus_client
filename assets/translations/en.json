@@ -101,5 +101,7 @@
   "driverCancelledRide": "Driver has canceled the trip",
   "driverIsAccepted": "The driver accepted",
   "backToHome": "Back To Home",
-  "tripBookedSuccessfully": "Trip Booked Successfully"
+  "tripBookedSuccessfully": "Trip Booked Successfully",
+  "ifyoucancelthetriphalfdinarwillbeaddedtoyournexttrip": "If you cancel the trip, half a dinar will be added to your next trip .",
+  "note": "Note"
 }

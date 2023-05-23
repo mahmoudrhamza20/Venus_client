@@ -8,7 +8,6 @@ import '../../../../core/utils/dio_helper.dart';
 import '../../../../core/utils/end_points.dart';
 import '../../../../core/utils/error_model.dart';
 import '../models/cancel_search_modrl.dart';
-import '../models/send_msg_model.dart';
 
 
 class CancelledSearchRepo {

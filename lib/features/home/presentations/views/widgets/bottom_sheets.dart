@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -11,26 +10,20 @@ import 'package:pinput/pinput.dart';
 import 'package:taxi/core/utils/magic_router.dart';
 import 'package:taxi/core/widgets/custom_text_form.dart';
 import 'package:taxi/features/after_splash/presentations/views/after_splash_view.dart';
-import 'package:taxi/features/home/presentations/views/home_view.dart';
 import 'package:taxi/features/home/presentations/views_models/get_direction_cubit/get_direction_cubit.dart';
 import 'package:taxi/features/home/presentations/views_models/get_driver_cubit/get_driver_cubit.dart';
 import 'package:taxi/features/home/presentations/views_models/post_details_cubit/post_details_cubit.dart';
 import 'package:taxi/features/home/presentations/views_models/promo_code_cubit/promo_code_cubit.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../../../core/utils/assets.dart';
-import '../../../../../core/utils/cache_helper.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/widgets/custom_button.dart';
-import '../../../../../core/widgets/custom_loading_idicator.dart';
-import '../../../../../core/widgets/custom_rating_bar.dart';
 import '../../../../../core/widgets/custom_snackbar.dart';
 import '../../../../../global_variables.dart';
 import '../../../../../translations/locale_keys.g.dart';
-
 import '../../views_models/rate_model/rate_cubit.dart';
 import '../canceling_reasons_view.dart';
-import '../searching_car_view.dart';
 import 'contact_us_view_body.dart';
 
 Set<Marker> markersList = {};

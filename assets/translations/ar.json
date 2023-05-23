@@ -101,5 +101,7 @@
   "driverCancelledRide": "لقد الغي السائق الرحله",
   "driverIsAccepted": "لقد وافق السائق",
   "backToHome": "العودة للحجز مره اخرى",
-  "tripBookedSuccessfully": "تم حجز الرحله بنجاح"
+  "tripBookedSuccessfully": "تم حجز الرحله بنجاح",
+  "ifyoucancelthetriphalfdinarwillbeaddedtoyournexttrip": "إذا قمت بإلغاء الرحلة ، فسيتم إضافة نصف دينار إلى رحلتك القادمة.",
+  "note": "ملحوظة"
 }

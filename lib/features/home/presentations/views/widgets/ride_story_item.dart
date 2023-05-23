@@ -1,13 +1,9 @@
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/constants.dart';
-import '../../../../../core/utils/magic_router.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../translations/locale_keys.g.dart';
-import '../../views_models/hisroty_ride_details_cubit/histoty_ride_details_cubit.dart';
-import '../ride_story_item_details_view.dart';
 
 class RideStoryItem extends StatelessWidget {
   const RideStoryItem({

@@ -4,7 +4,6 @@ import 'package:taxi/core/utils/magic_router.dart';
 import 'package:taxi/features/after_splash/presentations/views/after_splash_view.dart';
 import '../../../../../core/utils/cache_helper.dart';
 import '../../../../../core/widgets/custom_snackbar.dart';
-import '../../../../unsupported_location/presentations/views/unsupported_ location_view.dart';
 import '../../../data/repos/cancelled_ride_repo.dart';
 part 'cancelled_ride_state.dart';
 

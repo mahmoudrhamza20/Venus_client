@@ -13,10 +13,10 @@ import '../../../../../core/widgets/custom_icon_back.dart';
 import '../../../../../core/widgets/custom_snackbar.dart';
 import '../../../../../global_variables.dart';
 import '../../../../../translations/locale_keys.g.dart';
+import '../../../../home/presentations/views/canceling_reasons_view.dart';
 import '../../../../home/presentations/views/widgets/bottom_sheets.dart';
 import '../../../../home/presentations/views_models/get_direction_cubit/get_direction_cubit.dart';
 import '../../../../home/presentations/views_models/post_details_cubit/post_details_cubit.dart';
-import 'dart:developer';
 
 class AfterSplashViewBody extends StatefulWidget {
   const AfterSplashViewBody({super.key});
@@ -87,6 +87,7 @@ class _AfterSplashViewBodyState extends State<AfterSplashViewBody> {
                       text: LocaleKeys.setDestination.tr(),
                       onTap: () {
                          MagicRouter.navigateTo(const HomeView());
+                        // MagicRouter.navigateTo(const CancelingReasonsView());
                          }),
                   BlocListener<PostDetailsCubit, PostDetailsState>(
                     listener: (context, state) {

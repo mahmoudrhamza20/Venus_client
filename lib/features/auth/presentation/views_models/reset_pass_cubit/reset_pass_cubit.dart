@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:equatable/equatable.dart';
@@ -10,7 +9,6 @@ import '../../../../../core/widgets/custom_snackbar.dart';
 import '../../../../../translations/locale_keys.g.dart';
 import '../../../data/repos/reset_pass_repo.dart';
 import '../../views/login_view.dart';
-
 part 'reset_pass_state.dart';
 
 class ResetPassCubit extends Cubit<ResetPassState> {

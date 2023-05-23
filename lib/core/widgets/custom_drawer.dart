@@ -30,7 +30,7 @@ Drawer customDrawer(BuildContext context) {
     'عربي  🇸🇦',
     '🇺🇸  English',
   ];
-   final cubit = ProfileCubit.of(context);
+
   return Drawer( 
       child: SingleChildScrollView(
     child: Column(

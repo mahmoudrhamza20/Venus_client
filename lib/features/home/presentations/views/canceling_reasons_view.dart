@@ -6,11 +6,12 @@ import 'package:taxi/core/utils/constants.dart';
 import 'package:taxi/core/utils/styles.dart';
 import 'package:taxi/core/widgets/custom_button.dart';
 import 'package:taxi/features/home/presentations/views_models/get_direction_cubit/get_direction_cubit.dart';
-import 'package:taxi/global_variables.dart';
 import '../../../../core/widgets/progress_dialog.dart';
 import '../../../../translations/locale_keys.g.dart';
 import '../views_models/cancel_ride_cubit/cancelled_ride_cubit.dart';
 import '../views_models/post_details_cubit/post_details_cubit.dart';
+import 'dart:developer';
+
 
 class CancelingReasonsView extends StatelessWidget {
   const CancelingReasonsView({Key? key}) : super(key: key);
@@ -66,7 +67,6 @@ class _CancelingReasonsViewBodyState extends State<CancelingReasonsViewBody> {
   @override
   Widget build(BuildContext context) {
     final postCubit = PostDetailsCubit.of(context);
-    final getCubit = GetDirectionCubit.of(context);
     final cancelCubit = CancelledRideCubit.of(context);
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 25.w),
@@ -106,8 +106,23 @@ class _CancelingReasonsViewBodyState extends State<CancelingReasonsViewBody> {
                   .toList(),
             ),
           ),
-          const SizedBox(
-            height: 50,
+          
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('${LocaleKeys.note.tr()}: ', style: FontStyles.textStyle15.copyWith(color: Colors.red),   ),
+              Column(
+                children: [
+                  SizedBox(width: 260.w,
+                    child: Text(LocaleKeys.ifyoucancelthetriphalfdinarwillbeaddedtoyournexttrip.tr(), style: FontStyles.textStyle15.copyWith(color: kBlack),
+                     ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+           SizedBox(
+            height: 40.h,
           ),
           BlocBuilder<CancelledRideCubit, CancelledRideState>(
             builder: (context, state) {
@@ -120,9 +135,8 @@ class _CancelingReasonsViewBodyState extends State<CancelingReasonsViewBody> {
                     textColor: kWhite,
                     backgroundColor: kDeepBlue,
                     onPressed: () => {
-                      print(radioItem),
+                      log(radioItem),
                       cancelCubit.cancelRide( rideId:postCubit.bookRideModel!.id ,reason: 'client_$radioItem'),
-                      print(getCubit.notificationDetails!.ride),
                     }
                     
                     ),

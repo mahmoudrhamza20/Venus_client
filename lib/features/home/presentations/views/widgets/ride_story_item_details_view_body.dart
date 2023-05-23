@@ -6,7 +6,6 @@ import 'package:taxi/core/utils/assets.dart';
 import 'package:taxi/core/utils/magic_router.dart';
 import 'package:taxi/core/widgets/custom_button.dart';
 import 'package:taxi/features/home/presentations/views_models/hisroty_ride_details_cubit/histoty_ride_details_cubit.dart';
-import '../../../../../core/utils/cache_helper.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/widgets/custom_icon_back.dart';
@@ -270,13 +269,13 @@ final String endTime;
                dis,
                 style: FontStyles.textStyle15.copyWith(color: kBlack),
               ),
-              //  SizedBox(
-              //   width: 2.w,
-              // ),
-              // Text(
-              //   LocaleKeys.km.tr(),
-              //   style: FontStyles.textStyle15.copyWith(color: kBlack),
-              // ),
+               SizedBox(
+                width: 2.w,
+              ),
+              Text(
+                LocaleKeys.km.tr(),
+                style: FontStyles.textStyle15.copyWith(color: kBlack),
+              ),
               SizedBox(
                 width: 2.w,
               ),
@@ -291,13 +290,13 @@ final String endTime;
                 time,
                 style: FontStyles.textStyle15.copyWith(color: kBlack),
               ),
-              //  SizedBox(
-              //   width: 2.w,
-              // ),
-              // Text(
-              //   LocaleKeys.mins.tr(),
-              //   style: FontStyles.textStyle15.copyWith(color: kBlack),
-              // ),
+               SizedBox(
+                width: 2.w,
+              ),
+              Text(
+                LocaleKeys.mins.tr(),
+                style: FontStyles.textStyle15.copyWith(color: kBlack),
+              ),
             ],
           ),
           Row(

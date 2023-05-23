@@ -9,7 +9,6 @@ import 'package:taxi/core/utils/magic_router.dart';
 import 'package:taxi/core/utils/styles.dart';
 import 'package:taxi/features/auth/presentation/views_models/register_cubit/register_cubit.dart';
 import '../../../../../core/widgets/custom_button.dart';
-import '../../../../../core/widgets/custom_loading_idicator.dart';
 import '../../../../../core/widgets/custom_text_form.dart';
 import '../../../../../core/widgets/progress_dialog.dart';
 import '../../../../../global_variables.dart';

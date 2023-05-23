@@ -117,7 +117,9 @@ class CodegenLoader extends AssetLoader{
   "driverCancelledRide": "لقد الغي السائق الرحله",
   "driverIsAccepted": "لقد وافق السائق",
   "backToHome": "العودة للحجز مره اخرى",
-  "tripBookedSuccessfully": "تم حجز الرحله بنجاح"
+  "tripBookedSuccessfully": "تم حجز الرحله بنجاح",
+  "ifyoucancelthetriphalfdinarwillbeaddedtoyournexttrip": "إذا قمت بإلغاء الرحلة ، فسيتم إضافة نصف دينار إلى رحلتك القادمة.",
+  "note": "ملحوظة"
 };
 static const Map<String,dynamic> en = {
   "desc1": "Enable location sharing so that your driver can see where you are",
@@ -222,7 +224,9 @@ static const Map<String,dynamic> en = {
   "driverCancelledRide": "Driver has canceled the trip",
   "driverIsAccepted": "The driver accepted",
   "backToHome": "Back To Home",
-  "tripBookedSuccessfully": "Trip Booked Successfully"
+  "tripBookedSuccessfully": "Trip Booked Successfully",
+  "ifyoucancelthetriphalfdinarwillbeaddedtoyournexttrip": "If you cancel the trip, half a dinar will be added to your next trip .",
+  "note": "Note"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

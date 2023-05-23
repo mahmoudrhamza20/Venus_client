@@ -1,10 +1,8 @@
 import 'dart:developer';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../core/utils/cache_helper.dart';
 import '../../../../../core/widgets/custom_snackbar.dart';
 import '../../../data/models/promo_code_model.dart';
 import '../../../data/repos/promo_code_repo.dart';

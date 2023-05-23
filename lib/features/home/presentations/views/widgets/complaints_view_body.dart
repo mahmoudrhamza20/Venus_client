@@ -6,7 +6,6 @@ import 'package:taxi/core/utils/constants.dart';
 import 'package:taxi/core/utils/styles.dart';
 import 'package:taxi/core/widgets/custom_button.dart';
 import 'package:taxi/features/home/presentations/views_models/complaints_cubit/complaints_cubit.dart';
-import 'package:taxi/features/home/presentations/views_models/get_direction_cubit/get_direction_cubit.dart';
 import 'package:taxi/features/home/presentations/views_models/post_details_cubit/post_details_cubit.dart';
 import '../../../../../core/utils/magic_router.dart';
 import '../../../../../core/widgets/custom_icon_back.dart';
@@ -20,7 +19,6 @@ class ComplaintsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit = ComplaintsCubit.of(context);
-    final getCubit = GetDirectionCubit.of(context);
      final postCubit = PostDetailsCubit.of(context);
     return SafeArea(
       child: Padding(

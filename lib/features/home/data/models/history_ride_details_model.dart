@@ -120,7 +120,7 @@ class Driver {
     String userName;
     String phone;
     String photo;
-    int avgRate;
+    dynamic avgRate;
     String license;
     int board;
     String type;
