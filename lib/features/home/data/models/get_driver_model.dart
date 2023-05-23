@@ -47,7 +47,7 @@ class GetDriverData {
     String photo;
     String carType;
     int carBoard;
-    String wallets;
+    dynamic wallets;
     int rides;
     int rates;
     dynamic rating;

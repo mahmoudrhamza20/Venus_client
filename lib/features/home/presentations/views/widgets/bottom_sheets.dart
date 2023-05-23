@@ -525,11 +525,10 @@ Future<dynamic> buildBookRideShowModalBottomSheetWithoutDes(BuildContext context
                   cost:0,
                   );
                     getDirectionCubit.driverArrived();
-
                   //getDirectionCubit.drivercancelled(context);
                  // MagicRouter.navigateTo(const SearchingCarView())
-                 log( getDirectionCubit.directionDetails!.durationText!,);                 
-                 log( getDirectionCubit.directionDetails!.endAddress!,);                 
+                // log( getDirectionCubit.directionDetails!.durationText!,);                 
+               //  log( getDirectionCubit.directionDetails!.endAddress!,);                 
                 
                 },
               ),
