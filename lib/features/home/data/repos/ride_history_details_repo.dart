@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:taxi/core/utils/end_points.dart';
 import '../../../../core/utils/app_storage.dart';
@@ -15,12 +16,12 @@ class HistoryRideDetailsRepo {
     });
     try {
       if (response.statusCode == 200) {
-        print("Success HistoryRideDetailsRepo");
-        print(AppStorage.getLang);
+        log("Success HistoryRideDetailsRepo");
+        log(AppStorage.getLang);
         print(response);
         return Right(HistotyRideDetailsModel.fromJson(jsonDecode(response.toString())));
       } else {
-        print(response);
+       
         return Left(ErrorModel.fromJson(jsonDecode(response.toString()))
             .message
             .toString());

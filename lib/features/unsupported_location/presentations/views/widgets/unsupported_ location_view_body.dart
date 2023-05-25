@@ -15,7 +15,6 @@ import 'package:taxi/core/widgets/custom_button.dart';
 import '../../../../../../core/widgets/custom_icon_back.dart';
 import '../../../../../../global_variables.dart';
 import '../../../../../core/utils/assets.dart';
-import '../../../../../core/utils/cache_helper.dart';
 import '../../../../../core/widgets/custom_snackbar.dart';
 import '../../../../../translations/locale_keys.g.dart';
 import '../../../../home/presentations/views/widgets/bottom_sheets.dart';
@@ -191,7 +190,7 @@ void getCurrentPositionUpdate() async {
                     mode: Mode.overlay,
                     types: [],
                     strictbounds: false,
-                    components: [Component(Component.country, 'eg')],
+                    components: [Component(Component.country, 'JO')],
                     //google_map_webservice package
                     onError: (err) {
                       debugPrint(err.toString());
@@ -217,7 +216,6 @@ void getCurrentPositionUpdate() async {
                   debugPrint('------------------------------');
                   debugPrint(destinationPosition.latitude.toString());
                   debugPrint(destinationPosition.longitude.toString());
-                  print(CacheHelper.getData(key:'userId'));
                   debugPrint('------------------------------');
 
                   markersList.add(Marker(

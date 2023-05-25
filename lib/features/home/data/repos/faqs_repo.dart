@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:taxi/core/utils/end_points.dart';
 import '../../../../core/utils/app_storage.dart';
@@ -13,11 +14,11 @@ class FaqsRepo {
     });
     try {
       if (response.statusCode == 200) {
-        print("Success LoginRepo");
-        print(response);
+        log("Success GetFaqsRepo");
+       // log(response);
         return Right(FaqsModel.fromJson(jsonDecode(response.toString())));
       } else {
-        print(response);
+       
         return Left(ErrorModel.fromJson(jsonDecode(response.toString()))
             .message
             .toString());

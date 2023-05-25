@@ -166,7 +166,7 @@ icon: Icons.menu);
                     mode: Mode.overlay,
                     types: [],
                     strictbounds: false,
-                    components: [Component(Component.country, 'eg')],
+                    components: [Component(Component.country, 'JO')],
                     //google_map_webservice package
                     onError: (err) {
                       debugPrint(err.toString());
@@ -191,7 +191,6 @@ icon: Icons.menu);
                   debugPrint('------------------------------');
                   debugPrint(destinationPosition.latitude.toString());
                   debugPrint(destinationPosition.longitude.toString());
-                  print(CacheHelper.getData(key:'userId'));
                   debugPrint('------------------------------');
                   markersList.add(Marker(
                       markerId: const MarkerId("destinationPosition"),

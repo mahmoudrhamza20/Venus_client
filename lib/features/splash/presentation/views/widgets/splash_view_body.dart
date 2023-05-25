@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:taxi/core/utils/assets.dart';
-import 'package:taxi/features/home/presentations/views/home_view.dart';
 import 'package:taxi/features/onBoarding/data/presentation/view/on_boarding_view.dart';
 import '../../../../../core/utils/cache_helper.dart';
 import '../../../../../core/utils/magic_router.dart';

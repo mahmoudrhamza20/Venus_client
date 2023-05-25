@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taxi/core/utils/magic_router.dart';
@@ -19,7 +21,7 @@ class CancelledRideCubit extends Cubit<CancelledRideState> {
     res.fold(
           (err) {
         showSnackBar(err.toString());
-        print('error');
+        log('error');
         emit(CancelledRideLoading());
        
           },
@@ -28,7 +30,7 @@ class CancelledRideCubit extends Cubit<CancelledRideState> {
            showSnackBar( CacheHelper.getData(key: 'lang') !='en'
                   ? res.data.message:'Ride is cancelled');
         emit(CancelledRideInitial());
-        print('sucess Cancelled');
+        log('sucess Cancelled');
         MagicRouter.navigateAndPopAll(const AfterSplashView());
 
       },

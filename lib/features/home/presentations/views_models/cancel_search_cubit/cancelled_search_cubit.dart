@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/utils/cache_helper.dart';
@@ -20,7 +21,7 @@ class CancelledSearchCubit extends Cubit<CancelledSearchState> {
     res.fold(
           (err) {
         showSnackBar(err.toString());
-        print('error');
+        log('error');
         emit(CancelledSearchLoading());
         MagicRouter.navigateAndPopAll(const UnsupportedLocationView());
       },
@@ -28,7 +29,7 @@ class CancelledSearchCubit extends Cubit<CancelledSearchState> {
         emit(CancelledSearchSuc());
         showSnackBar( CacheHelper.getData(key: 'lang') !='en'
                   ?res.message:'Search is Cancelled');
-        print('sucess');
+        log('sucess');
         
         MagicRouter.navigateAndPopAll(const AfterSplashView());
       },

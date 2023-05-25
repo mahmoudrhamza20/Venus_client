@@ -148,7 +148,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                                         text: LocaleKeys.signIn.tr(),
                                         onTap: () {
                                           LoginCubit.of(context).login();
-                                          print('login button');
+                                       
                                         }),
                                   );
                           },

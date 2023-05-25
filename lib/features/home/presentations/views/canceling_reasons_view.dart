@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taxi/core/utils/constants.dart';
 import 'package:taxi/core/utils/styles.dart';
 import 'package:taxi/core/widgets/custom_button.dart';
-import 'package:taxi/features/home/presentations/views_models/get_direction_cubit/get_direction_cubit.dart';
 import '../../../../core/widgets/progress_dialog.dart';
 import '../../../../translations/locale_keys.g.dart';
 import '../views_models/cancel_ride_cubit/cancelled_ride_cubit.dart';

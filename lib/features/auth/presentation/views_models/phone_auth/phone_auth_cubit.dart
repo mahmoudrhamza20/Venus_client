@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:equatable/equatable.dart';
@@ -26,7 +28,7 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
 
   Future<void> submitPhoneNumber() async {
     emit(Loading());
-    print('+${selectedCountry.phoneCode}${phoneNumberController.text}');
+    log('+${selectedCountry.phoneCode}${phoneNumberController.text}');
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber: '+${selectedCountry.phoneCode}${phoneNumberController.text}',
       timeout: const Duration(seconds: 14),
@@ -38,18 +40,18 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
   }
 
   void verificationCompleted(PhoneAuthCredential credential) async {
-    print('verificationCompleted');
+    log('verificationCompleted');
     await signIn(credential);
   }
 
   void verificationFailed(FirebaseAuthException error) {
-    print('verificationFailed : ${error.toString()}');
+    log('verificationFailed : ${error.toString()}');
     emit(ErrorOccurred(errorMsg: error.toString()));
   }
 
   void codeSent(String verificationId, int? resendToken) {
-    print('codeSent');
-    print(verificationId);
+    log('codeSent');
+    log(verificationId);
     
 
    CacheHelper.saveData(key: 'receivedID', value: verificationId);
@@ -60,11 +62,11 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
   }
 
   void codeAutoRetrievalTimeout(String verificationId) {
-    print('codeAutoRetrievalTimeout');
+    log('codeAutoRetrievalTimeout');
   }
 
   Future<void> submitOTP(String otpCode) async {
-    print(otpCode);
+    log(otpCode);
     PhoneAuthCredential credential = PhoneAuthProvider.credential(
         verificationId: CacheHelper.getData(key: 'receivedID'), smsCode: otpCode);
 
@@ -77,7 +79,7 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
       MagicRouter.navigateTo(const ResetPasswordView());
       emit(PhoneOTPVerified());
     } catch (error) {
-      print(error);
+      log("$error");
       emit(ErrorOccurred(errorMsg: error.toString()));
     }
   }

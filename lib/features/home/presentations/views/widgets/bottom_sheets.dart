@@ -93,9 +93,6 @@ Future<dynamic> buildShowModalBottomSheet(BuildContext context,
 }
 
 Future<dynamic> buildSearchModalBottomSheet(BuildContext context) {
-  final postCubit = PostDetailsCubit.of(context);
-  final getDirectionCubit = GetDirectionCubit.of(context);
-   //final promoCodeCubit = PromoCodeCubit.of(context);
   return showModalBottomSheet(
     isScrollControlled: true,
     shape: RoundedRectangleBorder(

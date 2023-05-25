@@ -76,7 +76,7 @@ class ProfileCubit extends Cubit<ProfileState> {
       },
       (res) async {
         showSnackBar(res.message);
-        print(res.message);
+        log(res.message);
        // showSnackBar('تم تحديث الصوره الشخصيه');
         await CacheHelper.saveData(key: 'photo', value: res.data.photo);
         emit(ProfileInitial());

@@ -23,7 +23,6 @@ class RateCubit extends Cubit<RateState> {
       },
           (res) async {
         emit(SendMsgLoaded());
-        print('done');
         CacheHelper.getData(key: 'lang') =='en'?showSnackBar('Message sent successfully') :showSnackBar('تم إرسال الرسالة بنجاح');
         msgController.clear();
       },

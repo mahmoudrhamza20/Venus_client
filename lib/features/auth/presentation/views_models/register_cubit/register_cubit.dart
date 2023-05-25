@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -33,7 +32,7 @@ class RegisterCubit extends Cubit<RegisterState> {
 
 Future<void> submitPhoneNumber() async {
     emit(Loading());
-    print('+${selectedCountry.phoneCode}${phoneNumberController.text}');
+    log('+${selectedCountry.phoneCode}${phoneNumberController.text}');
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber: '+${selectedCountry.phoneCode}${phoneNumberController.text}',
       timeout: const Duration(seconds: 14),
@@ -45,18 +44,18 @@ Future<void> submitPhoneNumber() async {
   }
 
   void verificationCompleted(PhoneAuthCredential credential) async {
-    print('verificationCompleted');
+    log('verificationCompleted');
     await signIn(credential);
   }
 
   void verificationFailed(FirebaseAuthException error) {
-    print('verificationFailed : ${error.toString()}');
+    log('verificationFailed : ${error.toString()}');
     emit(ErrorOccurred(errorMsg: error.toString()));
   }
 
   void codeSent(String verificationId, int? resendToken) {
-    print('codeSent');
-    print(verificationId);
+    log('codeSent');
+    log(verificationId);
     
   
    CacheHelper.saveData(key: 'receivedID', value: verificationId);
@@ -65,7 +64,7 @@ Future<void> submitPhoneNumber() async {
   }
 
   void codeAutoRetrievalTimeout(String verificationId) {
-    print('codeAutoRetrievalTimeout');
+    log('codeAutoRetrievalTimeout');
   }
 
  Future<void> signIn(PhoneAuthCredential credential) async {
@@ -74,7 +73,7 @@ Future<void> submitPhoneNumber() async {
       register();
       emit(PhoneOTPVerified());
     } catch (error) {
-      print(error);
+      log("$error");
       emit(ErrorOccurred(errorMsg: error.toString()));
     }
   }
@@ -94,7 +93,7 @@ Future<void> submitPhoneNumber() async {
     );
     try {
       await auth.signInWithCredential(credential).then((value) {
-       print('User Login In Successful');
+       log('User Login In Successful');
         MagicRouter.navigateTo(const AfterSplashView());
         emit(PhoneOTPVerified());
       });

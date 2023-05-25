@@ -80,7 +80,7 @@ class _TaxiState extends State<Taxi> {
   NetworkConnectivity.instance.initialise();
     NetworkConnectivity.instance.myStream.listen((source) {
       _source = source;
-      print('source $_source');
+      log('source $_source');
       switch (_source.keys.toList()[0]) {
         case ConnectivityResult.mobile:
           _source.values.toList()[0]

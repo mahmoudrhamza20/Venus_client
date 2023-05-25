@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import '../../../../../core/widgets/custom_snackbar.dart';
@@ -23,12 +25,8 @@ List<RideHistoryData> list = [];
         emit(RideHistoryInitial());
       },
       (res) async {
-        print('sucsess');
-    
+        log('sucsess');
         list = res.data;
-        // print(rideHistoryModel!.data[0].clientId);
-        // print(rideHistoryModel!.data[0].driverId);
-        // print(rideHistoryModel!.data);
         emit(RideHistoryInitial());
       },
     );

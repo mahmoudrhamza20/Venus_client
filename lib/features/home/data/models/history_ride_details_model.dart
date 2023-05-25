@@ -46,7 +46,7 @@ class HistotyRideDetails {
     String distance;
     String time;
     dynamic total;
-    dynamic discount;
+    String? discount;
     Driver driver;
     DateTime date;
     dynamic reasonCancelled;
@@ -122,7 +122,7 @@ class Driver {
     String photo;
     dynamic avgRate;
     String license;
-    int board;
+    dynamic board;
     String type;
 
     Driver({

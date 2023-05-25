@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';
@@ -74,7 +75,7 @@ class ProfileRepo {
     });
     print(fileName);
     print(photo.path);
-    print(CacheHelper.getData(key: 'userId'));
+    log(CacheHelper.getData(key: 'userId'));
     final response = await DioHelper.post(EndPoints.updateProfile,
         headers: {
           'lang': AppStorage.getLang,
@@ -84,7 +85,7 @@ class ProfileRepo {
         formData: body);
     try {
       if (response.statusCode == 200 && response.data['status'] == 'success') {
-        print("Success EditImageProfileRepo");
+        log("Success EditImageProfileRepo");
         return Right(UserModel.fromJson(jsonDecode(response.toString())));
       } else {
         return Left(ErrorModel.fromJson(jsonDecode(response.toString()))

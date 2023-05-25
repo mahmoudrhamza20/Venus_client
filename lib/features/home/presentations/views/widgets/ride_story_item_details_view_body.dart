@@ -31,7 +31,7 @@ final String endTime;
    final String type;
    final dynamic rate;
    final dynamic late;
-   final dynamic discount;
+   final String discount;
 
   @override
   Widget build(BuildContext context) {
@@ -345,7 +345,7 @@ final String endTime;
                 style: FontStyles.textStyle15.copyWith(color: Colors.black),
               ),
               Text(
-                '${double.parse(discount)/100}',
+                '${double.parse(discount)/100 }' ,
                 style: FontStyles.textStyle15.copyWith(color: Colors.black),
               ),
             ],

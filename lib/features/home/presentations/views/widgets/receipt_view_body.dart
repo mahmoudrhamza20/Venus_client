@@ -245,7 +245,6 @@ class SupTotalSection extends StatelessWidget {
    final dynamic discount;
   @override
   Widget build(BuildContext context) {
-    final getCubit = GetDirectionCubit.of(context);
     return Column(
       children: [
         const Divider(

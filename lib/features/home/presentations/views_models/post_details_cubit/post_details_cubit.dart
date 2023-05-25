@@ -76,10 +76,9 @@ class PostDetailsCubit extends Cubit<PostDetailsState> {
             showSnackBar(res.message);
            // showSnackBar(LocaleKeys.tripBookedSuccessfully.tr());
            // showSnackBar(AppStorage.getLang == 'en'?'Trip Booked Successfully ':'تم حجز الرحله بنجاح');
-            print('+++++++++++++++++++++++');
            bookRideModel =res.data;
            rideIdCancel = bookRideModel!.id;
-           print(bookRideModel!.id);
+           log(bookRideModel!.id);
         emit(PostDetailsLoading());
        MagicRouter.navigateAndPopAll(const SearchingCarView());
       },

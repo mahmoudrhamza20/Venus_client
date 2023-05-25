@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taxi/core/utils/magic_router.dart';
@@ -26,10 +28,10 @@ class HistotyRideDetailsCubit extends Cubit<HistotyRideDetailsState> {
       },
           (res) async {
             histotyRideDetailsData = res.data;
-            print('11111111111111111111111111111111111111');
-            print(histotyRideDetailsData!.driver.name);
-            print(histotyRideDetailsData!.late);
-            print('11111111111111111111111111111111111111');
+            log('11111111111111111111111111111111111111');
+            log(histotyRideDetailsData!.driver.name);
+            // log(histotyRideDetailsData!.late);
+            log('11111111111111111111111111111111111111');
             MagicRouter.navigateTo( RideStoryItemDetailsView(
               cost: histotyRideDetailsData!.costRide,
                dis: histotyRideDetailsData!.distance ,

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:taxi/core/utils/cache_helper.dart';
 import 'package:taxi/core/utils/end_points.dart';
@@ -15,9 +16,9 @@ class PrivacyRepo {
     });
     try {
       if (response.statusCode == 200) {
-        print("Success PrivacyRepo");
-        print(AppStorage.getLang);
-        print(response);
+        log("Success PrivacyRepo");
+        log(AppStorage.getLang);
+       // print(response);
         return Right(PrivacyModel.fromJson(jsonDecode(response.toString())));
       } else {
         print(response);

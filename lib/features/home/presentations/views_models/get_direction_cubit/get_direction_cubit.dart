@@ -5,7 +5,6 @@ import 'package:equatable/equatable.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -157,15 +156,15 @@ void getRequest() async {
         int ride = data['ride'];
         driverId = iDdriver;
         driverPhone = phone;
-        print('222222222222222222222222');
-        print(driverId);
+        log('222222222222222222222222');
+        log('$driverId');
         assetsAudioPlayer.play();
         Timer(const Duration(seconds: 3), () {
           assetsAudioPlayer.stop();
         });
         showSnackBar(LocaleKeys.driverIsAccepted.tr(),
             margin: EdgeInsets.only(bottom: 500.h, left: 25.w, right: 25.w));
-        print('222222222222222222222222');
+        log('222222222222222222222222');
         emit(GetDirectionDoneRequest());
         getDriverLocation();
         MagicRouter.navigateTo(TrackerMapView(
@@ -265,8 +264,8 @@ void getRequest() async {
      MagicRouter.navigateTo( ReceiptView(dis: distance, endAdd: endRide, endTime: endTime, fee: fee, startTime: startTime, startTAdd: startRide, time: time, cost:cost, total:data['Total'].toString(),late: late, discount: discount,)
      );
       emit(GetDirectionFinish());
-     print(distance);
-     print(cost);
+     log(distance);
+     log(cost);
     await listenReceipt.remove();
     await reference.remove();
     }}
@@ -285,7 +284,7 @@ if(event.snapshot.value == null){
   return ;
 }else{
   final data = event.snapshot.value as Map;
-  print('arrived');
+  log('arrived');
    showSnackBar(LocaleKeys.driverIsArrived.tr(),margin: EdgeInsets.only(bottom: 500.h,left: 25.w,right: 25.w));
   //  assetsAudioPlayer.open(
   //     Audio("assets/sounds/alert.mp3"),
