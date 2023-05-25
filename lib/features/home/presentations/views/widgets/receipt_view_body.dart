@@ -332,7 +332,7 @@ class SupTotalSection extends StatelessWidget {
                 style: FontStyles.textStyle15.copyWith(color: Colors.black),
               ),
               Text(
-                '${((discount))} ${'%'}',
+                '${double.parse(discount)/100}',
                 style: FontStyles.textStyle15.copyWith(color: Colors.black),
               ),
             ],

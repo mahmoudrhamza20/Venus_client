@@ -341,11 +341,11 @@ final String endTime;
            Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-             Text('Discount',
+             Text( LocaleKeys.discount.tr(),
                 style: FontStyles.textStyle15.copyWith(color: Colors.black),
               ),
               Text(
-                '${((discount))} ${'%'}',
+                '${double.parse(discount)/100}',
                 style: FontStyles.textStyle15.copyWith(color: Colors.black),
               ),
             ],

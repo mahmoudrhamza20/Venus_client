@@ -119,7 +119,8 @@ class CodegenLoader extends AssetLoader{
   "backToHome": "العودة للحجز مره اخرى",
   "tripBookedSuccessfully": "تم حجز الرحله بنجاح",
   "ifyoucancelthetriphalfdinarwillbeaddedtoyournexttrip": "إذا قمت بإلغاء الرحلة ، فسيتم إضافة نصف دينار إلى رحلتك القادمة.",
-  "note": "ملحوظة"
+  "note": "ملحوظة",
+  "discount": "تخفيض"
 };
 static const Map<String,dynamic> en = {
   "desc1": "Enable location sharing so that your driver can see where you are",
@@ -226,7 +227,8 @@ static const Map<String,dynamic> en = {
   "backToHome": "Back To Home",
   "tripBookedSuccessfully": "Trip Booked Successfully",
   "ifyoucancelthetriphalfdinarwillbeaddedtoyournexttrip": "If you cancel the trip, half a dinar will be added to your next trip .",
-  "note": "Note"
+  "note": "Note",
+  "discount": "Discount"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

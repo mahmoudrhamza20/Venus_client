@@ -48,17 +48,17 @@ class ContactUsData {
     required this.youtube,
   });
 
-  String titleEn;
-  String addressEn;
-  String whatsPhone;
-  String email;
-  String facebook;
-  String snapchat;
-  String tiktok;
-  String whatsapp;
-  String instgram;
-  String twitter;
-  String youtube;
+  String? titleEn;
+  String? addressEn;
+  String? whatsPhone;
+  String? email;
+  String? facebook;
+  String? snapchat;
+  String? tiktok;
+  String? whatsapp;
+  String? instgram;
+  String? twitter;
+  String? youtube;
 
   factory ContactUsData.fromJson(Map<String, dynamic> json) => ContactUsData(
         titleEn: json["title_en"],

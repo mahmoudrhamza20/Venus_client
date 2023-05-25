@@ -523,6 +523,7 @@ Future<dynamic> buildBookRideShowModalBottomSheetWithoutDes(BuildContext context
                   currentLat:currentPosition.latitude,
                   currentLong:currentPosition.longitude,
                   cost:0,
+                  coupunId: promoCodeCubit.promoCodeModel?.coupon.id,
                   );
                     getDirectionCubit.driverArrived();
                   //getDirectionCubit.drivercancelled(context);

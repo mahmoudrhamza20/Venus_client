@@ -106,5 +106,6 @@ abstract class  LocaleKeys {
   static const tripBookedSuccessfully = 'tripBookedSuccessfully';
   static const ifyoucancelthetriphalfdinarwillbeaddedtoyournexttrip = 'ifyoucancelthetriphalfdinarwillbeaddedtoyournexttrip';
   static const note = 'note';
+  static const discount = 'discount';
 
 }

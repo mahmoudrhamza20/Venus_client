@@ -52,23 +52,23 @@ class GetDirectionCubit extends Cubit<GetDirectionState> {
   BitmapDescriptor destinationIcon = BitmapDescriptor.defaultMarker;
   BitmapDescriptor currentLocationIcon = BitmapDescriptor.defaultMarker;
 
-  void getPolyPoints() async {
-    emit(PolyLoaded());
-    PolylinePoints polylinePoints = PolylinePoints();
-    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-      mapKey,
-      PointLatLng(currentPosition.latitude, currentPosition.longitude),
-      PointLatLng(driverLocation.latitude, driverLocation.longitude),
-    );
-    if (result.points.isNotEmpty) {
-      for (var point in result.points) {
-        polylineCoordinates.add(
-          LatLng(point.latitude, point.longitude),
-        );
-      }
-      emit(PolyLoading());
-    }
-  }
+  // void getPolyPoints() async {
+  //   emit(PolyLoaded());
+  //   PolylinePoints polylinePoints = PolylinePoints();
+  //   PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+  //     mapKey,
+  //     PointLatLng(currentPosition.latitude, currentPosition.longitude),
+  //     PointLatLng(driverLocation.latitude, driverLocation.longitude),
+  //   );
+  //   if (result.points.isNotEmpty) {
+  //     for (var point in result.points) {
+  //       polylineCoordinates.add(
+  //         LatLng(point.latitude, point.longitude),
+  //       );
+  //     }
+  //     emit(PolyLoading());
+  //   }
+  // }
 
   void getCurrentPositionUpdate() async {
     Position position = await Geolocator.getCurrentPosition(

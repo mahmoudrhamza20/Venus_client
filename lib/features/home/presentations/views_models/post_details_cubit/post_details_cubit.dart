@@ -64,7 +64,7 @@ class PostDetailsCubit extends Cubit<PostDetailsState> {
     }
     emit(PostDetailsLoading());
     final res = await postDetailsRepo.postDetails(
-      startRide:  startRide,endRide:endRide,currentLat: currentLat,currentLong: currentLong,dLat:dLong ,cost:cost,distance: distance,time: time,coupunId:coupunId );
+      startRide:  startRide,endRide:endRide,currentLat: currentLat,currentLong: currentLong,dLat:dLat,dLong: dLong ,cost:cost,distance: distance,time: time,coupunId:coupunId );
     res.fold(
           (err) {
         showSnackBar(AppStorage.getLang == 'en'

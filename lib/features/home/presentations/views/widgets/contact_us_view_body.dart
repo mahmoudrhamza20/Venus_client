@@ -75,7 +75,7 @@ class ContactUsViewBody extends StatelessWidget {
                                         width: 5.w,
                                       ),
                                       Text(
-                                        cubit.contactUsData!.email,
+                                        cubit.contactUsData?.email??'',
                                         style: FontStyles.textStyle15,
                                       ),
                                     ],
@@ -99,23 +99,23 @@ class ContactUsViewBody extends StatelessWidget {
                                     children: [
                                       ContactUsSocialIcon(
                                         image: AssetsData.face,
-                                        link: cubit.contactUsData!.facebook,
+                                        link: cubit.contactUsData!.facebook??'',
                                       ),
                                       ContactUsSocialIcon(
                                         image: AssetsData.insta,
-                                        link: cubit.contactUsData!.instgram,
+                                        link: cubit.contactUsData!.instgram?? '',
                                       ),
                                       ContactUsSocialIcon(
                                         image: AssetsData.twitter,
-                                        link: cubit.contactUsData!.twitter,
+                                        link: cubit.contactUsData!.twitter??'',
                                       ),
                                       ContactUsSocialIcon(
                                         image: AssetsData.tiktok,
-                                        link: cubit.contactUsData!.tiktok,
+                                        link: cubit.contactUsData!.tiktok?? '',
                                       ),
                                       ContactUsSocialIcon(
                                         image: AssetsData.snap,
-                                        link: cubit.contactUsData!.snapchat,
+                                        link: cubit.contactUsData!.snapchat?? '',
                                       ),
                                     ],
                                   )

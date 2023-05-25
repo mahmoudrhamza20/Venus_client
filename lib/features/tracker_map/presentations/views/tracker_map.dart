@@ -70,7 +70,7 @@ class _TrackerMapViewState extends State<TrackerMapView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-              create: (context) => GetDirectionCubit()..getPolyPoints()..setCustomMarker()..getCurrentPositionUpdate()..getReceipt()..drivercancelled(context)..getDriverLocation(),
+              create: (context) => GetDirectionCubit()..setCustomMarker()..getCurrentPositionUpdate()..getReceipt()..drivercancelled(context)..getDriverLocation(),
             child: WillPopScope(
                onWillPop: () async => false,
               child: Scaffold(
