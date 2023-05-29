@@ -190,7 +190,7 @@ void getCurrentPositionUpdate() async {
                     mode: Mode.overlay,
                     types: [],
                     strictbounds: false,
-                    components: [Component(Component.country, 'JO')],
+                    components: [Component(Component.country,'JO')],
                     //google_map_webservice package
                     onError: (err) {
                       debugPrint(err.toString());

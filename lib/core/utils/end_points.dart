@@ -1,6 +1,6 @@
 abstract class EndPoints {
   //------------------------------------------------------------------------//
-  static const String baseUrl = 'https://venusride.technomasrsystems.com/api/';
+  static const String baseUrl = 'https://venus-ride.co/api/';
   //------------------------------------------------------------------------//
 
   static const String login = 'client/login';

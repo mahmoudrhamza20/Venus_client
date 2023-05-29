@@ -75,7 +75,7 @@ class ProfileRepo {
     });
     print(fileName);
     print(photo.path);
-    log(CacheHelper.getData(key: 'userId'));
+    //log(CacheHelper.getData(key: 'userId'));
     final response = await DioHelper.post(EndPoints.updateProfile,
         headers: {
           'lang': AppStorage.getLang,

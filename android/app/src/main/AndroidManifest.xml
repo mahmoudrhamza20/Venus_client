@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="taxi"
+        android:label="Venus Ride"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -34,6 +34,6 @@
             android:name="flutterEmbedding"
             android:value="2" />
        <meta-data android:name="com.google.android.geo.API_KEY"
-                  android:value="AIzaSyCYsYxe7GS6bTiQPM3uFe51m_sLfji4u8I"/>
+                  android:value="AIzaSyBaj8TdogqYDV8xOtl2HyJT7HO8m1IkcIE"/>
     </application>
 </manifest>
